@@ -1,0 +1,21 @@
+﻿seed: 42
+input_length: 336
+horizons: [96, 336]
+datasets: [ETTh1, ETTm1]
+models: [tcn, moderntcn, dlinear]
+seeds: [42, 123, 2026]
+
+training:
+  batch_size: 32
+  learning_rate: 0.001
+  max_epochs: 10
+  early_stopping_patience: 3
+
+evaluation:
+  metrics: [mse, mae]
+  normalized_data: true
+  select_on: validation
+  test_only_after_selection: true
+
+moderntcn:
+  kernel_sizes: [9, 17, 33]

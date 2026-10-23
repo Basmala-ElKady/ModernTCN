@@ -1,0 +1,10 @@
+﻿# Python dependencies
+
+# Add exact tested versions after the pilot environment is verified.
+torch
+numpy
+pandas
+scikit-learn
+matplotlib
+PyYAML
+pytest
