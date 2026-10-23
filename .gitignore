@@ -5,14 +5,11 @@ venv/
 .env
 .ipynb_checkpoints/
 .DS_Store
-
 data/
 *.csv
 *.parquet
-
 checkpoints/*
 !checkpoints/.gitkeep
-
 *.pt
 *.pth
 *.ckpt

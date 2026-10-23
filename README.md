@@ -6,40 +6,41 @@ Topic: Large kernels instead of dilation, based on ModernTCN (ICLR 2024).
 
 ## Research goals
 
-- Compare a Lab 4 TCN baseline, DLinear, and a ModernTCN-style model.
+- Compare the Lab 4 TCN baseline, DLinear, and a ModernTCN-style model.
 - Evaluate ETTh1 and ETTm1.
 - Use an input window of 336 and forecast horizons of 96 and 336.
 - Report normalized MSE and MAE.
 - Measure effective receptive fields using autograd.
-- Compare at least three large depthwise kernel sizes.
+- Compare at least three depthwise kernel sizes.
 - Report mean and standard deviation over three seeds.
 - Identify and explain a reproducible failure case.
 
-## Project rules
+## Rules
 
-- Implement the core model components in PyTorch.
+- Implement core model components in PyTorch.
 - Do not copy the authors' model implementation.
-- Use validation data for model selection.
-- Evaluate the test set only after model selection.
-- Record the source files read from the authors' repository.
-- Record AI assistance in the report.
+- Select models using validation data.
+- Evaluate the test set after model selection.
+- Record author-code files inspected.
+- Declare AI assistance in the report.
 
-## Repository layout
+## Structure
 
-- src/ contains model, data, training, and analysis code.
-- tests/ contains automated checks.
-- configs/ contains experiment configurations.
-- notebooks/ contains the final Colab notebook.
-- results/ contains metrics, figures, and run manifests.
-- research/ contains paper notes and the experimental claim.
-- report/ and slides/ contain the final deliverables.
+- src/: data, models, training, and analysis.
+- tests/: automated tests.
+- configs/: experiment settings.
+- notebooks/: final Colab notebook.
+- research/: claim, paper notes, and inspected source files.
+- results/: metrics, figures, and run manifests.
+- checkpoints/: checkpoint placeholders.
+- report/ and slides/: final deliverables.
 
 ## Colab workflow
 
-Clone or open the repository in Colab.
-Mount Google Drive for checkpoints and large run artifacts.
-Install the tested requirements.
-Run a pilot before full training.
-Use TRAIN=False to load compatible checkpoints for final evaluation when required.
+1. Clone the repository.
+2. Mount Google Drive for checkpoints and large artifacts.
+3. Install the tested requirements.
+4. Run pilot experiments before full training.
+5. Use TRAIN=False to evaluate compatible saved checkpoints when needed.
 
-Do not commit large datasets, credentials, or model checkpoints to ordinary Git history.
+Do not commit credentials, datasets, or large checkpoints to Git.

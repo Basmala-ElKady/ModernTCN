@@ -1,7 +1,4 @@
-﻿# Python dependencies
-
-# Add exact tested versions after the pilot environment is verified.
-torch
+﻿torch
 numpy
 pandas
 scikit-learn
