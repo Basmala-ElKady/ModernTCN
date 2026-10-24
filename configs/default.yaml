@@ -1,21 +1,33 @@
-﻿seed: 42
-input_length: 336
-horizons: [96, 336]
-datasets: [ETTh1, ETTm1]
-models: [tcn, moderntcn, dlinear]
-seeds: [42, 123, 2026]
+﻿data:
+  datasets:
+    - ETTh1
+    - ETTm1
+  input_length: 336
+  forecast_horizons:
+    - 96
+    - 336
+  features: M
+  normalization: standard
 
 training:
   batch_size: 32
   learning_rate: 0.001
-  max_epochs: 10
-  early_stopping_patience: 3
+  epochs: 10
+  patience: 3
+  seeds:
+    - 42
+    - 123
+    - 2026
 
 evaluation:
-  metrics: [mse, mae]
-  normalized_data: true
-  select_on: validation
-  test_only_after_selection: true
+  metrics:
+    - MSE
+    - MAE
+  metric_space: normalized
 
-moderntcn:
-  kernel_sizes: [9, 17, 33]
+experiment:
+  models:
+    - tcn
+    - moderntcn
+    - dlinear
+  device: auto
