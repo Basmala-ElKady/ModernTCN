@@ -1,5 +1,5 @@
-from src.models.tcn import TCN
-from src.models.moderntcn import ModernTCN
+from src.models.tcn import TCN, build_tcn
+from src.models.moderntcn import ModernTCN, build_moderntcn
 from src.models.dlinear import DLinear
 
 
@@ -21,4 +21,8 @@ def build_model(config: dict):
             f"Available models: {list(MODEL_REGISTRY)}"
         )
 
-    return MODEL_REGISTRY[model_name](config)
+    if model_name == "tcn":
+        return build_tcn(config)
+    if model_name == "moderntcn":
+        return build_moderntcn(config)
+    return DLinear.from_config(config)
