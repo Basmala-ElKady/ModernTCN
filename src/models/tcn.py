@@ -13,6 +13,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn.utils.parametrizations import weight_norm
 
+from .revin import RevIN
+
 
 class CausalConv1d(nn.Module):
     """Conv1d with left-only padding: output[t] depends on input[<= t]."""
@@ -54,9 +56,12 @@ def levels_to_cover(kernel_size: int, input_length: int) -> int:
 
 class TCN(nn.Module):
     def __init__(self, num_variables, input_length, forecast_horizon,
-                 hidden_channels=64, kernel_size=3, num_levels=None, dropout=0.1):
+                 hidden_channels=64, kernel_size=3, num_levels=None, dropout=0.1,
+                 use_revin=False, revin_affine=True):
         super().__init__()
         self.H, self.C = forecast_horizon, num_variables
+        self.L = input_length
+        self.revin = RevIN(num_variables, affine=revin_affine) if use_revin else None
         if num_levels is None:  # smallest depth whose RF covers the input window
             num_levels = levels_to_cover(kernel_size, input_length)
         self.num_levels = num_levels
@@ -70,11 +75,16 @@ class TCN(nn.Module):
 
     def forward_features(self, x: torch.Tensor) -> torch.Tensor:
         """x [B, L, C] -> per-step features [B, hidden, L] (used by causality test / ERF)."""
+        if x.ndim != 3 or x.shape[1:] != (self.L, self.C):
+            raise ValueError(f"Expected [B, {self.L}, {self.C}], got {tuple(x.shape)}")
+        if self.revin is not None:
+            x = self.revin.normalize(x)
         return self.network(x.transpose(1, 2))
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         h = self.forward_features(x)[:, :, -1]            # [B, hidden]
-        return self.head(h).view(-1, self.H, self.C)      # [B, H, C]
+        y = self.head(h).view(-1, self.H, self.C)
+        return self.revin.denormalize(y) if self.revin is not None else y
 
 
 def build_tcn(config: dict) -> TCN:
@@ -88,4 +98,6 @@ def build_tcn(config: dict) -> TCN:
         kernel_size=m.get("kernel_size", 3),
         num_levels=m.get("num_levels"),
         dropout=m.get("dropout", 0.1),
+        use_revin=m.get("use_revin", False),
+        revin_affine=m.get("revin_affine", True),
     )
