@@ -1,0 +1,10 @@
+model,dataset,horizon,kernel_size,seed,status,best_epoch,best_val_mse,test_mse,test_mae,training_seconds,checkpoint
+moderntcn,ETTh1,96,15,42,completed,3,0.6815028369248377,0.37788200851300846,0.40192227749638226,20.65,/content/drive/MyDrive/ModernTCN_full_experiments/kernel_ablation/checkpoints/moderntcn_k15_ETTh1_h96_seed42.pt
+moderntcn,ETTh1,96,15,123,completed,2,0.6904115160377635,0.37819136673134085,0.4012749314257209,15.68,/content/drive/MyDrive/ModernTCN_full_experiments/kernel_ablation/checkpoints/moderntcn_k15_ETTh1_h96_seed123.pt
+moderntcn,ETTh1,96,15,2026,completed,2,0.6841067666527225,0.3802518576528819,0.40390873217853795,15.41,/content/drive/MyDrive/ModernTCN_full_experiments/kernel_ablation/checkpoints/moderntcn_k15_ETTh1_h96_seed2026.pt
+moderntcn,ETTh1,96,31,42,completed,3,0.699077743296441,0.3823185481015786,0.4042210419361251,20.1,/content/drive/MyDrive/ModernTCN_full_experiments/kernel_ablation/checkpoints/moderntcn_k31_ETTh1_h96_seed42.pt
+moderntcn,ETTh1,96,31,123,completed,2,0.6903958268029838,0.37766673727362465,0.40159498659720777,17.11,/content/drive/MyDrive/ModernTCN_full_experiments/kernel_ablation/checkpoints/moderntcn_k31_ETTh1_h96_seed123.pt
+moderntcn,ETTh1,96,31,2026,completed,2,0.6752360640952473,0.3797053093562485,0.4038982807331292,17.32,/content/drive/MyDrive/ModernTCN_full_experiments/kernel_ablation/checkpoints/moderntcn_k31_ETTh1_h96_seed2026.pt
+moderntcn,ETTh1,96,51,42,completed,1,0.7008000919612399,0.38749981091207364,0.40843361413223045,15.79,/content/drive/MyDrive/ModernTCN_full_experiments/kernel_ablation/checkpoints/moderntcn_k51_ETTh1_h96_seed42.pt
+moderntcn,ETTh1,96,51,123,completed,2,0.6993928670251309,0.3809163679860133,0.40333761541499147,19.05,/content/drive/MyDrive/ModernTCN_full_experiments/kernel_ablation/checkpoints/moderntcn_k51_ETTh1_h96_seed123.pt
+moderntcn,ETTh1,96,51,2026,completed,2,0.6745100028944737,0.38061115173251137,0.40415557068189395,19.07,/content/drive/MyDrive/ModernTCN_full_experiments/kernel_ablation/checkpoints/moderntcn_k51_ETTh1_h96_seed2026.pt

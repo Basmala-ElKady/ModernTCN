@@ -1,4 +1,4 @@
-﻿__pycache__/
+__pycache__/
 *.py[cod]
 .venv/
 venv/
@@ -6,10 +6,17 @@ venv/
 .ipynb_checkpoints/
 .DS_Store
 data/
-*.csv
 *.parquet
 checkpoints/*
 !checkpoints/.gitkeep
 *.pt
 *.pth
 *.ckpt
+powershell.cmd
+scratch/
+*.log
+
+# Allow result CSVs while ignoring raw data CSVs
+*.csv
+!results/**/*.csv
+!colab_sample_outputs/**/*.csv
