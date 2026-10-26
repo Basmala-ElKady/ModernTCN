@@ -1,0 +1,36 @@
+{
+  "OFF": {
+    "ok": true,
+    "device": "cpu",
+    "revin_flag": false,
+    "train_step_mse": 1.15146803855896,
+    "validation_batch_mse": 1.422846794128418,
+    "input_shape": [
+      32,
+      336,
+      7
+    ],
+    "forecast_shape": [
+      32,
+      96,
+      7
+    ]
+  },
+  "ON": {
+    "ok": true,
+    "device": "cpu",
+    "revin_flag": true,
+    "train_step_mse": 0.7550206184387207,
+    "validation_batch_mse": 0.702320396900177,
+    "input_shape": [
+      32,
+      336,
+      7
+    ],
+    "forecast_shape": [
+      32,
+      96,
+      7
+    ]
+  }
+}
