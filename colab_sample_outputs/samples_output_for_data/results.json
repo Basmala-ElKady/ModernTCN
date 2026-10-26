@@ -1,0 +1,50 @@
+{
+  "results": [
+    {
+      "model": "ModernTCN",
+      "status": "ok",
+      "best_epoch": 2,
+      "best_val_mse": 0.9120561946566578,
+      "test_mse": 0.5045541162418282,
+      "test_mae": 0.47414170417090995,
+      "test_rmse": 0.7103197281800838,
+      "training_time_seconds": 5.201620100007858,
+      "test_inference_time_seconds": 0.8767559999832883,
+      "peak_gpu_memory_mb": null,
+      "device": "cpu",
+      "checkpoint": "D:\\University Materials\\year 4\\Deep Learning\\ModernTCN\\colab_sample_outputs\\20261026_171430\\checkpoints\\moderntcn_best.pt",
+      "parameters": 65262
+    },
+    {
+      "model": "DLinear",
+      "status": "ok",
+      "best_epoch": 2,
+      "best_val_mse": 0.8211723360249331,
+      "test_mse": 0.4781635651641843,
+      "test_mae": 0.4784610253068497,
+      "test_rmse": 0.6914937202637377,
+      "training_time_seconds": 0.2440917000058107,
+      "test_inference_time_seconds": 0.06713229999877512,
+      "peak_gpu_memory_mb": null,
+      "device": "cpu",
+      "checkpoint": "D:\\University Materials\\year 4\\Deep Learning\\ModernTCN\\colab_sample_outputs\\20261026_171430\\checkpoints\\dlinear_best.pt",
+      "parameters": 64704
+    },
+    {
+      "model": "TCN",
+      "status": "ok",
+      "best_epoch": 2,
+      "best_val_mse": 1.3947116743206642,
+      "test_mse": 1.0923712410233393,
+      "test_mae": 0.7959825102219146,
+      "test_rmse": 1.0451656524318713,
+      "training_time_seconds": 7.034461400005966,
+      "test_inference_time_seconds": 1.2676925999985542,
+      "peak_gpu_memory_mb": null,
+      "device": "cpu",
+      "checkpoint": "D:\\University Materials\\year 4\\Deep Learning\\ModernTCN\\colab_sample_outputs\\20261026_171430\\checkpoints\\tcn_best.pt",
+      "parameters": 207072
+    }
+  ],
+  "errors": {}
+}
