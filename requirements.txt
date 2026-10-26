@@ -1,7 +1,8 @@
-﻿torch
+torch
 numpy
 pandas
 scikit-learn
 matplotlib
 PyYAML
 pytest
+reportlab
