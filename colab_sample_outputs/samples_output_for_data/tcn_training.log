@@ -1,0 +1,2 @@
+Epoch 1/2 | train_mse=1.056834 | val_mse=1.488223 | val_mae=0.872816
+Epoch 2/2 | train_mse=0.906853 | val_mse=1.394712 | val_mae=0.840161

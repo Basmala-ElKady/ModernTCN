@@ -1,0 +1,77 @@
+{
+  "ModernTCN": {
+    "device": "cpu",
+    "input_shape": [
+      32,
+      336,
+      7
+    ],
+    "target_shape": [
+      32,
+      96,
+      7
+    ],
+    "pilot_train_mse": 0.7550206184387207,
+    "val_batch_shape": [
+      32,
+      96,
+      7
+    ],
+    "test_batch_shape": [
+      32,
+      96,
+      7
+    ],
+    "ok": true
+  },
+  "DLinear": {
+    "device": "cpu",
+    "input_shape": [
+      32,
+      336,
+      7
+    ],
+    "target_shape": [
+      32,
+      96,
+      7
+    ],
+    "pilot_train_mse": 1.1378624439239502,
+    "val_batch_shape": [
+      32,
+      96,
+      7
+    ],
+    "test_batch_shape": [
+      32,
+      96,
+      7
+    ],
+    "ok": true
+  },
+  "TCN": {
+    "device": "cpu",
+    "input_shape": [
+      32,
+      336,
+      7
+    ],
+    "target_shape": [
+      32,
+      96,
+      7
+    ],
+    "pilot_train_mse": 1.0652925968170166,
+    "val_batch_shape": [
+      32,
+      96,
+      7
+    ],
+    "test_batch_shape": [
+      32,
+      96,
+      7
+    ],
+    "ok": true
+  }
+}

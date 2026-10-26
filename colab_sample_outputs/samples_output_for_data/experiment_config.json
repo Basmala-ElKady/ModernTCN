@@ -1,0 +1,31 @@
+{
+  "dataset": "ETTh1",
+  "data_dir": "D:\\University Materials\\year 4\\Deep Learning\\ModernTCN\\Datasets",
+  "input_length": 336,
+  "forecast_horizon": 96,
+  "num_variables": 7,
+  "features": "M",
+  "normalization": "standard (fit on train rows only)",
+  "sample_fraction": 0.05,
+  "seed": 42,
+  "batch_size": 32,
+  "epochs": 2,
+  "patience": 2,
+  "learning_rate": 0.001,
+  "device": "cpu",
+  "models": [
+    "ModernTCN",
+    "DLinear",
+    "TCN"
+  ],
+  "model_config": {
+    "moderntcn": {
+      "use_revin": true
+    },
+    "dlinear": {},
+    "tcn": {}
+  },
+  "primary_metric": "test_mse (normalized)",
+  "output_dir": "D:\\University Materials\\year 4\\Deep Learning\\ModernTCN\\colab_sample_outputs\\20261026_171430",
+  "runtime": "local/non-Colab"
+}
